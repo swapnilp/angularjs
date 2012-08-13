@@ -1,0 +1,7 @@
+function todoCtrl($scope) {
+    $scope.todos = [
+		    {text:'first', done:false},
+		    {text:'second', done:true}];
+    
+}
+
