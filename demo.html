@@ -18,5 +18,11 @@
       <input class="btn-primary" type="submit" value="add">
     </form>
     <button ng-click="clearCompleted()">clear complete</button>
+
+    <div ng-controller="myCtrl">
+      <input type="text" ng-model="text1x"/>
+      <button ng-click="addstr()">click</button>
+      <span>{{print_mystr()}}</span>
+    </div>
   </body>
 </html>

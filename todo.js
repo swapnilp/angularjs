@@ -23,3 +23,12 @@ function todoCtrl($scope) {
     };
 }
 
+function myCtrl($scope) {
+    $scope.mystr = '';
+    $scope.print_mystr = function() {
+	return $scope.mystr
+    };
+    $scope.addstr = function() {
+	$scope.mystr =  $scope.mystr + $scope.text1
+    };
+}
