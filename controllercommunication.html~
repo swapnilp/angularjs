@@ -1,0 +1,22 @@
+<html ng-app="myModule">
+  <head>
+    <script src="http://code.angularjs.org/angular-1.0.0rc10.min.js"></script>
+    <script src="controllercommunication.js"></script>
+  </head>
+  <body>
+    
+    <div ng-controller="oneCtrl">
+      <input type="text" ng-model="message" />
+      <button ng-click="handleClick()">Brodcast</button>
+    </div><br />
+
+    <div ng-controller="twoCtrl">
+      <input type="text" ng-model="message" />
+    </div><br />
+    
+    <div ng-controller="threeCtrl">
+      <input type="text" ng-model="message" />
+    </div>
+    
+  </body>
+</html>

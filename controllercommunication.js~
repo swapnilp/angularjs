@@ -1,0 +1,41 @@
+angular.module("myModule", []).
+    myModule.factory("mySharedService", function ($rootScope) {
+	    var sharedService = {};
+	    sharedService.message = '';
+	    sharedService.preForBrodcast = function(msg) {
+		this.message = msg;
+		this.brodcastItem();
+	    };
+	    sharedService.brodcastItem = function() {
+		$rootScope.$brodcast('handleBrodcast');
+	    };
+	    
+	});
+
+function oneCtrl($scope, mySharedService) {
+    $scope.handleClick = function() {
+	mySharedService.preForBrodcast($scope.message);
+    };
+       
+    $scope.$on('handleBrodcast', function() {
+	    $scope.message = 'one  :' + mySharedService.message;
+	});   
+}
+
+function twoCtrl($scope, mySharedService) {
+    
+    $scope.$on('handleBrodcast', function() {
+	    $scope.message = 'two  :' + mySharedService.message;
+	});   
+}
+
+function threeCtrl($scope, mySharedService) {
+    
+    $scope.$on('handleBrodcast', function() {
+	    $scope.message = 'three  :' + mySharedService.message;
+	});   
+}
+
+oneCtrl.$inject = ["$scope", "mySharedService"];
+twoCtrl.$inject = ["$scope", "mySharedService"];
+threeCtrl.$inject = ["$scope", "mySharedService"];
