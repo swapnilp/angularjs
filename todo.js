@@ -1,3 +1,13 @@
+angular.module("myroute", []).
+    config(function($routeProvider){
+	    $routeProvider.when('/about', {templateUrl:'partial/basic.html', controller:aboutCtrl});
+	    $routeProvider.when('/experiment', {templateUrl:'partial/basic.html', controller:experimentCtrl});
+	    $routeProvider.when('/home', {templateUrl:'partial/basic.html', controller:homeCtrl});
+	    $routeProvider.otherwise({redirectTo: "/home"});
+
+	});
+
+
 function todoCtrl($scope) {
     $scope.todos = [
 		    {text:'first', done:false},
@@ -31,4 +41,28 @@ function myCtrl($scope) {
     $scope.addstr = function() {
 	$scope.mystr =  $scope.mystr + $scope.text1
     };
+}
+
+
+function mainCtrl($scope, $location) {
+    $scope.setRoute = function(route) {
+	$location.path(route);
+    };
+}
+
+function aboutCtrl($scope) {
+    $scope.title = "About";
+    $scope.body = "M in About";
+	
+}
+
+function experimentCtrl($scope) {
+    $scope.title = "Experiment";
+    $scope.body = "M in experiment";
+	
+}
+
+function homeCtrl($scope) {
+    $scope.title = "Home";
+    $scope.body = "M in Home";
 }

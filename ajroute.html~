@@ -1,0 +1,14 @@
+<html ng-app="route">
+  <head>
+    <script src="angular-1.0.1.min.js"></script>
+    <script src="underscore-min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body ng-controller="mainCtrl">
+    <a ng-click="setRoute('about')">about</a>
+    <a ng-click="setRoute('experiment')">experiment</a>
+    <a ng-click="setRoute('home')">home</a>
+    <div ng-view></div>
+  </body>
+</html>
