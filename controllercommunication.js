@@ -1,7 +1,6 @@
 var myModule = angular.module('myModule', []);
 myModule.factory('mySharedService', function($rootScope) {
 	var sharedService = {};
-    
 	sharedService.message = '';
 
 	sharedService.prepForBroadcast = function(msg) {

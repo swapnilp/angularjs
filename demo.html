@@ -24,5 +24,14 @@
       <button ng-click="addstr()">click</button>
       <span>{{print_mystr()}}</span>
     </div>
+    <br />
+    <div>
+      <input type="text" ng-model="filterText"/>
+      <ul>
+	<li ng-repeat="item in items | filter:filterText">{{item}} </li>
+      </ul>
+    </div>
+
+    <input ng-model="maskDemo" ui-mask="'99-99-9999'">
   </body>
 </html>

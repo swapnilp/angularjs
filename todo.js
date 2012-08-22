@@ -12,7 +12,7 @@ function todoCtrl($scope) {
     $scope.todos = [
 		    {text:'first', done:false},
 		    {text:'second', done:true}];
-    
+    $scope.items = ["first", "second", "thrid", "fourth", "fifth"];
     $scope.addTodo = function() {
 	$scope.todos.push({text:$scope.todoText, done:false});
 	$scope.todoText = '';

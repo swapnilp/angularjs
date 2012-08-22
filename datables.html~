@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="http://code.angularjs.org/angular-1.0.0rc1.js"></script>
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/redmond/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/css/jquery.dataTables.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/jquery.dataTables.min.js"></script>
+
+
+    <script src="datables.js"></script>
+<style>
+</style>
+
+  </head>
+  <body>
+    <div ng-app="tableExample">
+      <div ng-controller="Ctrl">	
+	<table my-table="overrideOptions"
+	       aa-data="sampleProductCategories"
+	       ao-column-defs="columnDefs"
+	       fn-row-callback="myCallback"
+	       >
+          <thead>
+            <tr>
+	      <th style="width:150px">Category</th>
+	      <th style="width:250px">Name</th>
+	      <th style="width:100px">Price</th>
+	      
+            </tr>
+          </thead>
+	</table>
+	
+	{{message}}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="plunker" >
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Plunker</title>
+  <script src="http://code.angularjs.org/1.0.0/angular-1.0.0.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+   <div ng-repeat="product in products" ng-controller="ProductCtrl">
+      <h1>{{product.style}}</h1>
+      <p>{{product.label}}</p>
+      <p>Colors - hover over a color to see what sizes are available</p>
+      <ul>
+        <li ng-repeat="color in product.colors" ng-mouseenter="setCurrentColor(color)">{{color.name}}</li>
+      </ul>
+      <p>Sizes</p>
+      <ul>
+        <li ng-repeat="size in currentColor.sizes">{{size.name}}</li>
+      </ul>
+  </div>
+</body>
+</html>
